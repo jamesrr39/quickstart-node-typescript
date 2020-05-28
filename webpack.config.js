@@ -1,10 +1,8 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  mode: "development",
+  mode: 'none',
   target: 'node',
-  externals: [nodeExternals()],
   entry: './src/index.ts',
   devtool: "source-map",
   module: {
@@ -12,7 +10,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
       },
     ],
   },
